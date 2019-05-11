@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_151857) do
+ActiveRecord::Schema.define(version: 2019_05_11_170240) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -78,16 +78,16 @@ ActiveRecord::Schema.define(version: 2019_05_11_151857) do
     t.datetime "updated_at", null: false
     t.string "old_price"
     t.bigint "manufacturer_id"
+    t.string "mini_image"
+    t.string "big_image"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["manufacturer_id"], name: "index_products_on_manufacturer_id"
   end
 
   create_table "sub_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_sub_categories_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -111,5 +111,4 @@ ActiveRecord::Schema.define(version: 2019_05_11_151857) do
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "manufacturers"
-  add_foreign_key "sub_categories", "categories"
 end
