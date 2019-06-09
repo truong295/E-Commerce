@@ -9,15 +9,21 @@
     <title>Marketshop - eCommerce HTML Template</title>
     <meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
     <!-- CSS Part Start-->
-    <%= stylesheet_link_tag 'application' %>
-      <!-- CSS Part End-->
+    <title>ShoppingCart</title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <!-- CSS Part End-->
+    
 </head>
 
 <body>
-    <%= yield %>
-    <!-- Wrapper End -->
 
-    <!-- JS Part Start-->
+    <%= render partial: 'layouts/header' %>
+        <%= yield %>
+    <%= render partial: 'layouts/footer' %>
+  </div>
     <%= javascript_include_tag 'application' %>
     <!-- JS Part End-->
 </body>

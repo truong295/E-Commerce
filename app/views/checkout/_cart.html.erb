@@ -1,0 +1,16 @@
+ <tr>
+<td class="text-center">
+                                                                    <a href="product.html"><img src="<%= order_item.product.mini_image %>" alt="<%= order_item.product.name %>" title="<%= order_item.product.name %>" class="img-thumbnail"></a>
+                                                                </td>
+                                                                <td class="text-left"><a href="product.html"><%= order_item.product.name %></a></td>
+                                                                <td class="text-left">
+                                                                    <div class="input-group btn-block" style="max-width: 200px;">
+                                                                        <input type="text" name="quantity" value="<%= order_item.quantity %>" size="1" class="form-control">
+                                                                        <span class="input-group-btn">
+                                    <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
+                                    <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onClick=""><i class="fa fa-times-circle"></i></button>
+                                    </span></div>
+                                                                </td>
+                                                                <td class="text-right"><%= order_item.unit_price %></td>
+                                                                <td class="text-right"><%= order_item.unit_price * order_item.quantity %></td>
+                                                            </tr>

@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  def index
-    @products = Product.all
-  end
+skip_authorization_check only: [:index]
+	def index
+		
+	end
 end

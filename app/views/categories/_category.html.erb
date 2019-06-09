@@ -1,0 +1,15 @@
+ <div class="column col-lg-2 col-md-3"><a href="<%= category_path(category) %>"><%= category.name %></a>
+                                        <div>
+                                            <ul>
+                                                <% @sub_categories.each do |sub_category| %>
+                                                <% if sub_category.category %>
+                                                    <% if sub_category.category.name == category.name %>
+                                                    <%= render partial: 'categories/sub_category',object: sub_category, as: :sub_category %>
+                                                   <% end %>
+
+                                                    <% end %>
+                                                <% end %>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                  

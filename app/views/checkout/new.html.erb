@@ -1,0 +1,76 @@
+
+     
+        <div id="container">
+            <div class="container">
+                <!-- Breadcrumb Start-->
+                <ul class="breadcrumb">
+                    <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+                    <li><a href="cart.html">Shopping Cart</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+                <!-- Breadcrumb End-->
+                <div class="row">
+                    <!--Middle Part Start-->
+                    <div id="content" class="col-sm-12">
+                        <h1 class="title">Checkout</h1>
+                        <div class="row">
+                          
+                                  
+                                    <div class="col-sm-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title"><i class="fa fa-shopping-cart"></i> Shopping cart</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <td class="text-center">Image</td>
+                                                                <td class="text-left">Product Name</td>
+                                                                <td class="text-left">Quantity</td>
+                                                                <td class="text-right">Unit Price</td>
+                                                                <td class="text-right">Total</td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                           
+                                                               <%= render partial: "checkout/cart", collection: @order_items, as: :order_item %>
+                                                     
+                                                        </tbody>
+                                                       
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title"><i class="fa fa-pencil"></i> Add Comments About Your Order</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <textarea rows="4" class="form-control" id="confirm_comment" name="comments"></textarea>
+                                                <br>
+                                                <label class="control-label" for="confirm_agree">
+                                                    <input type="checkbox" checked="checked" value="1" required="" class="validate required" id="confirm_agree" name="confirm agree">
+                                                    <span>I have read and agree to the <a class="agree" href="#"><b>Terms &amp; Conditions</b></a></span> </label>
+                                                <div class="buttons">
+                                                    <div class="pull-right">
+                                                        <%= link_to "Confirm Order", checkout_index_path, method: :post %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Middle Part End -->
+                </div>
+            </div>
+        </div>
+        <!--Footer Start-->
+     

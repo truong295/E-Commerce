@@ -11,9 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require stylesheet
  *= require bootstrap.min.css
  *= require font-awesome/css/font-awesome.min.css
- *= require stylesheet
  *= require owl.carousel
  *= require owl.transitions
  *= require responsive
